@@ -13,8 +13,7 @@ SessionLocal=sessionmaker(
     autocommit=False,
     autoflush=False
 )
-class Base(declarative_base):
-    pass
+Base=declarative_base()
 def get_db():
     db=SessionLocal()
     try:
