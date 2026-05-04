@@ -32,6 +32,8 @@ def register(user:UserCreate,db:Session=Depends(get_db)):
     db.commit()
     return {"message":f"Account created for {user.username}"}
 
+#LOGIN-----------------------------------------------------------------------------------------------------------------------------------
+
 @router.post("/login",response_model=Token)
 def loing(user:UserCreate,db:Session=Depends(get_db)):
     found=db.query(User).filter(User.username==user.username).first()
