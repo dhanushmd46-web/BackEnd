@@ -24,15 +24,11 @@ jobs:
 
         # step 3 : install all python packages
       - name: Install dependencies
-        run: |
-          cd students-api 
-          pip install -r requirements.text
+        run: pip install -r requirements.text
 
         #step 4 : run the tests
       - name: Run tests
-        run: |
-          cd students-api
-          python -m pytest tests/ -v
+        run: python -m pytest tests/ -v
 
         env:
           # provide the secrets the app needs during testing
