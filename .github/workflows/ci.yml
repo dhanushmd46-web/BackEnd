@@ -20,7 +20,7 @@ jobs:
       - name: Set up python
         uses: actions/steps-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.14.4"
 
         # step 3 : install all python packages
       - name: Install dependencies
