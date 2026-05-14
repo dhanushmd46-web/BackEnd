@@ -50,7 +50,7 @@ def update_student(
     
     student=db.query(Student).filter(Student.id==student_id).first()
     if not student:
-        raise HTTPException(status_code=404,detail=f"student not foun")
+        raise HTTPException(status_code=404,detail=f"student not found")
     
     student.name=data.name
     student.age=data.age

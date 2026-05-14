@@ -5,3 +5,5 @@ python-jose
 python-dotenv
 bcrypt==4.0.1
 sqlalchemy
+pytest
+httpx
