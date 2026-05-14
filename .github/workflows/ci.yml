@@ -24,7 +24,7 @@ jobs:
 
         # step 3 : install all python packages
       - name: Install dependencies
-        run: pip install -r requirements.text
+        run: pip install -r requirements.txt
 
         #step 4 : run the tests
       - name: Run tests
