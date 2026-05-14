@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Chechout code
-        uses: actions/Chechout@v4
+      - name: checkout code
+        uses: actions/checkout@v4
 
       - name: Set up python
         uses: actions/steps-python@v5
