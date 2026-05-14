@@ -1,14 +1,12 @@
 name: CI
 
-
 #Trigger: run on every push to main, and on pull request targetting main
 
-on: 
+on:
   push:
-      branches: [main]
+    branches: [main]
   pull_request:
-      branches: [main]
-
+    branches: [main]
 
 jobs:
   test:
@@ -16,34 +14,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Chechout code
-      uses: actions/Chechout@v4
+      - name: Chechout code
+        uses: actions/Chechout@v4
 
-
-      -name: Set up python
-      uses: actions/steps-python@v5
-      with:
-        python-version: '3.11'
-
+      - name: Set up python
+        uses: actions/steps-python@v5
+        with:
+          python-version: "3.11"
 
         # step 3 : install all python packages
-      -name: Install dependencies
-      run: |
-        cd students-api 
-        pip install -r requirements.text
+      - name: Install dependencies
+        run: |
+          cd students-api 
+          pip install -r requirements.text
 
         #step 4 : run the tests
-      -name: Run tests
-      run: |
-        cd students-api
-        python -m pytest tests/ -v
+      - name: Run tests
+        run: |
+          cd students-api
+          python -m pytest tests/ -v
 
-      env:
-         
-         # provide the secrets the app needs during testing
-         #these values are for CI only - use Github secrets for real values
+        env:
+          # provide the secrets the app needs during testing
+          #these values are for CI only - use Github secrets for real values
 
-        SECRET_KEY: test-secret-key-for-ci-only-not-production
-        GEMINI_API_KEY: dummy-key-not-used-in-tests
-
-
+          SECRET_KEY: test-secret-key-for-ci-only-not-production
+          GEMINI_API_KEY: dummy-key-not-used-in-tests
